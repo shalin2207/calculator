@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<style>
+		.calculator
+		{
+			font-size: 30px;
+			text-align: center;
+			margin-top:20px;
+			font-weight: bold;
+		}
+		.container
+		{
+			height: 320px;
+			width: 500px;
+			margin: auto;
+			margin-top: 20px;
+			border: 10px solid black;
+			border-radius: 10px;
+			background: darkblue;
+		}
+		input
+		{
+			height: 50px;
+			width: 493px;
+			font-size: 30px;
+			margin-top: 10px;
+		}
+		button
+		{
+			height: 57px;
+			width: 121px;
+			text-align: center;
+			border-radius: 10px;
+			font-weight: bold;
+			font-size: 30px;
+			color: lightcoral;
+		}
+		
+	</style>
+</head>
+<body>
+
+       <div class="calculator">calculator</div>
+       <div class="container">
+       	                       <input type="text" name="screen" id="screen">
+       	               <table>
+       	               	 
+
+       	               	     <tr>
+       	               	     	<td><button>7</button></td>
+       	               	        <td><button>8</button></td>
+       	               	        <td><button>9</button></td>
+       	               	        <td><button>c</button></td>
+       	               	     </tr>
+
+       	               	     <tr>
+       	               	     	<td><button>4</button></td>
+       	               	        <td><button>5</button></td>
+       	               	        <td><button>6</button></td>
+       	               	        <td><button>+</button></td>
+       	               	     </tr>
+
+       	               	     <tr>
+       	               	     	<td><button>1</button></td>
+       	               	        <td><button>2</button></td>
+       	               	        <td><button>3</button></td>
+       	               	        <td><button>-</button></td>
+       	               	     </tr>
+
+       	               	     <tr>
+       	               	     	<td><button>0</button></td>
+       	               	        <td><button>%</button></td>
+       	               	        <td><button>*</button></td>
+       	               	        <td><button>=</button></td>
+       	               	     </tr>
+
+       	               	  </table>   	
+                           
+       </div>
+
+
+                            <script>
+
+                            	     let screen = document.getElementById('screen');
+                            	     console.log(screen)
+
+                            	      buttons = document.querySelectorAll('button');
+                            	     console.log(buttons)
+
+                            	     let screenValue = '';
+                             for(x of buttons){
+                             	            x.addEventListener('click', (e)=>{
+                             	      	buttonText = e.target.innerText;
+                             	      	console.log(buttonText)
+
+                             	      	if (buttonText == 'X')
+                             	      	 {
+                                             buttonText == '+';
+                                              screenValue += buttonText;
+                                             screen.value = screenValue;
+                             	      	 }
+                             	      	 else if (buttonText == 'c')
+                             	      	  {
+                             	      	  	 screenValue = '';
+                                              screen.value = screenValue;
+
+                             	      	  }
+                             	      	 else if (buttonText == '=')
+                             	      	  {
+                                              screen.value = eval(screenValue)
+                             	      	  }
+                             	      	   else
+                             	      	  {
+                                                screenValue += buttonText;
+                                             screen.value = screenValue;
+                             	      	  }
+
+                             	      })
+                            	}
+
+
+
+
+
+                            </script>
+
+
+
+</body>
+</html>
